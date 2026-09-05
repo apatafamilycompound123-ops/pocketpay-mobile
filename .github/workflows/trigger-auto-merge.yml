@@ -19,9 +19,9 @@ jobs:
     steps:
       - name: Trigger automation repo
         env:
-          GH_TOKEN: ${!{ secrets.AXIONVERA_AUTOMATION_TOKEN }}
+          GH_TOKEN: ${{ secrets.AXIONVERA_AUTOMATION_TOKEN }}
         run: |
-          jq -n --arg event "axionvera-pr-opened" --arg repo "$curl github.repository}" --arg pr "$curl github.event.pull_request.number}" '{event_type:$event, client_payload:{"repo":$repo, pr_number:$pr}}' |
+          jq -n --arg event "axionvera-pr-opened" --arg repo "${{ github.repository }}" --arg pr "${{ github.event.pull_request.number }}" '{event_type:$event, client_payload:{"repo":$repo, pr_number:$pr}}' |
             gh api \
               --method POST \
               -H "Accept: application/vnd.github+json" \
