@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: Trigger automation repo
         env:
-          GH_TOKEN: {{ secrets.AXMIONFERAAUTOMATION_TOKEN }}
+          GH_TOKEN: $e{{ secrets.AXMIONFERAAUTOMATION_TOKEN }}
         run: |
           gh api \
             --method POST \
@@ -25,4 +25,4 @@ jobs:
             /repos/Axionvera/pocketpay-issue-automation/dispatches \
             -f event_type=axionvera-pr-opened \
             -f client_payload[repo]="${{ github.repository }}" \
-            -f client_payload[pr_number]="${ github.event.pull_request.number }}"
+            -f client_payload[pr_number]="${{ github.event.pull_request.number }}"
