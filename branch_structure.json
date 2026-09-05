@@ -1,0 +1,21 @@
+{
+  "default_branch": "main",
+  "branches": [
+    "feat/issue-203-add-mobile-matured-lock-withdrawal-flow",
+    "fix/issue-444-add-mobile-local-verification-command",
+    "main",
+    "origin"
+  ],
+  "parent": {
+    "feat/issue-203-add-mobile-matured-lock-withdrawal-flow": "main",
+    "fix/issue-444-add-mobile-local-verification-command": "main",
+    "main": null,
+    "origin": "main"
+  },
+  "order": [
+    "main",
+    "feat/issue-203-add-mobile-matured-lock-withdrawal-flow",
+    "fix/issue-444-add-mobile-local-verification-command",
+    "origin"
+  ]
+}
